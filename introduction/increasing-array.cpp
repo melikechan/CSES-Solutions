@@ -1,6 +1,6 @@
 /*
     Author: Melike Vurucu (melikechan)
-    Date: 5.12.2023 (DD.MM.YYYY)
+    Date: 05.12.2023 (DD.MM.YYYY)
     Problem Link: https://cses.fi/problemset/task/1094
 */
 

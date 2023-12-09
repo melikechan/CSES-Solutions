@@ -42,9 +42,10 @@ ostream &operator<<(ostream &os, const vector<T> &v)
 
 void solve()
 {
-    ll n;
+    ll n; // Use long long to avoid overflows!
     cin >> n;
 
+    // Perform the described algorithm in the problem.
     while (n != 1)
     {
         cout << n << " ";

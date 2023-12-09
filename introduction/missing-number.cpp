@@ -2,6 +2,8 @@
     Author: Melike Vurucu (melikechan)
     Date: 05.12.2023 (DD.MM.YYYY)
     Problem Link: https://cses.fi/problemset/task/1083
+    ==================================================
+    Time Complexity: O(n)
 */
 
 #include <bits/stdc++.h>
@@ -45,6 +47,7 @@ void solve()
     ll n;
     cin >> n;
 
+    // Simply keep a boolean vector that represents if we have encountered this number (0-indexed!)
     vector<bool> v(n);
     loopi(i, 0, i, n, 1)
     {
@@ -53,6 +56,7 @@ void solve()
         v[x - 1] = true;
     }
 
+    // If we didn't encounter number i (0-indexed), return i + 1 (as our answer is 1-indexed)
     loopi(i, 0, i, n, 1)
     {
         if (!v[i])

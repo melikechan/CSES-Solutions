@@ -2,6 +2,8 @@
     Author: Melike Vurucu (melikechan)
     Date: 05.12.2023 (DD.MM.YYYY)
     Problem Link: https://cses.fi/problemset/task/1069
+    ==================================================
+    Time Complexity: O(n)
 */
 
 #include <bits/stdc++.h>
@@ -45,21 +47,27 @@ void solve()
     string s;
     cin >> s;
 
+    /*
+        Store two variables:
+        ans -> to store the maximal answer so far
+        cur -> to store current state (how many consequent same letters)
+    */
     ll ans = 1, cur = 1;
+
     loopi(i, 1, i, s.size(), 1)
     {
-        if (s[i] == s[i - 1])
+        if (s[i] == s[i - 1]) // If current letter is same with the previous, increase current state by one.
         {
             cur++;
         }
-        else
+        else // Take the maximal and reset current state.
         {
             ans = max(ans, cur);
             cur = 1;
         }
     }
 
-    cout << max(ans, cur);
+    cout << max(ans, cur); // Our answer is the maximum one.
 }
 
 int main(void)

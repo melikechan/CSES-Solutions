@@ -2,6 +2,8 @@
     Author: Melike Vurucu (melikechan)
     Date: 05.12.2023 (DD.MM.YYYY)
     Problem Link: https://cses.fi/problemset/task/1070
+    ==================================================
+    Time Complexity: O(n)
 */
 
 #include <bits/stdc++.h>
@@ -45,16 +47,37 @@ void solve()
     ll n;
     cin >> n;
 
-    if (n == 1)
+    if (n == 1) // There is only one element, thus it doesn't have any adjacent elements.
     {
         cout << 1;
     }
-    else if (n < 4)
+    else if (n < 4) // For cases n = 2 and n = 3, there is no solution.
     {
+        /*
+            Possible formations for,
+            |=======|=======|
+            | n = 2 | n = 3 |
+            |-------|-------|
+            |  1 2  | 1 2 3 |
+            |  2 1  | 1 3 2 |
+            |=======| 2 1 3 |
+                    | 2 3 1 |
+                    | 3 1 2 |
+                    | 3 2 1 |
+                    |=======|
+
+            We can see that there are adjacent elements whose difference is 1.
+        */
         cout << "NO SOLUTION";
     }
     else
     {
+        /*
+            We can divide elements into two halves:
+            [1, n/2] and [n/2 + 1, n]
+            For even indices, we can choose from the first half.
+            For odd indices, we can choose from the second half.
+        */
         ll l = n / 2 + 1, r = 1;
         loopi(i, 0, i, n, 1)
         {

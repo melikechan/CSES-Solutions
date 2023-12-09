@@ -2,6 +2,8 @@
     Author: Melike Vurucu (melikechan)
     Date: 05.12.2023 (DD.MM.YYYY)
     Problem Link: https://cses.fi/problemset/task/1094
+    ==================================================
+    Time Complexity: O(n)
 */
 
 #include <bits/stdc++.h>
@@ -53,6 +55,13 @@ void solve()
         v.push_back(x);
     }
 
+    /*
+        If we want to turn this array into an increasing one using minimum number of moves, 
+        we have to check if previous number is greater than our current number.
+
+        (prev_number > current_number) -> we will add (prev_number - current_number) to current_number to make them equal.
+        Otherwise we can continue to iterate.
+    */
     ll ans = 0;
     loopi(i, 1, i, n, 1)
     {

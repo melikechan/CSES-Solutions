@@ -4,6 +4,7 @@
     Problem Link: https://cses.fi/problemset/task/1629
     ==================================================
     Time Complexity: O(nlogn)
+    Space Complexity: O(n)
 */
 
 #include <bits/stdc++.h>

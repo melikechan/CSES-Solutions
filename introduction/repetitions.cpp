@@ -3,7 +3,8 @@
     Date: 05.12.2023 (DD.MM.YYYY)
     Problem Link: https://cses.fi/problemset/task/1069
     ==================================================
-    Time Complexity: O(n)
+    Time Complexity: O(|s|) (|s| is the length of the string)
+    Space Complexity: O(|s|)
 */
 
 #include <bits/stdc++.h>

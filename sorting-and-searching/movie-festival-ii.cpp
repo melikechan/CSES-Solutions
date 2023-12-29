@@ -3,7 +3,8 @@
     Date: 05.12.2023 (DD.MM.YYYY)
     Problem Link: https://cses.fi/problemset/task/1632
     ==================================================
-    Time Complexity: O(nlogk)
+    Time Complexity: O(nlogk) (n is number of films, k is number of persons)
+    Space Complexity: O(n + k)
 */
 
 #include <bits/stdc++.h>

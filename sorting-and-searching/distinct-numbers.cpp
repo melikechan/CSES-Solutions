@@ -2,6 +2,9 @@
     Author: Melike Vurucu (melikechan)
     Date: 05.12.2023 (DD.MM.YYYY)
     Problem Link: https://cses.fi/problemset/task/1621
+    ==================================================
+    Time Complexity: O(nlogn) (because we are inserting n elements to the set)
+    Space Complexity: O(n) (because set is a red-black tree, it uses O(n) space)
 */
 
 #include <bits/stdc++.h>

@@ -3,7 +3,8 @@
     Date: 05.12.2023 (DD.MM.YYYY)
     Problem Link: https://cses.fi/problemset/task/1074
     ==================================================
-    Time Complexity: O(nlogn) 
+    Time Complexity: O(nlogn)
+    Space Complexity: O(n)
 */
 
 #include <bits/stdc++.h>

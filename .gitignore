@@ -33,3 +33,6 @@
 
 # My C++ template
 template.cpp
+
+# .vscode
+.vscode

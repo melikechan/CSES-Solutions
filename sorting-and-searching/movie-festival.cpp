@@ -13,12 +13,6 @@
 #pragma GCC target("sse4,avx,avx2,bmi,bmi2,popcnt,lzcnt") // default architechture flags, you can use below as fallback
 // #pragma GCC target("sse4,bmi,bmi2,popcnt,lzcnt")
 
-// Loops
-#define loopi($i, s, es, n, inc) for (ll $i = s; es < n; $i += inc)
-#define loopieq($i, s, es, n, inc) for (ll $i = s; es <= n; $i += inc)
-#define loopd($i, s, es, n, dec) for (ll $i = s; es > n; $i -= dec)
-#define loopdeq($i, s, es, n, dec) for (ll $i = s; es >= n; $i -= dec)
-
 using namespace std;
 
 using ll = long long;
@@ -51,8 +45,7 @@ void solve()
     // 1st solution: Priority queue based
     /*
     priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
-    loopi(i, 0, i, n, 1)
-    {
+    for (ll i = 0; i < n; i++){
         int a, b;
         cin >> a >> b;
         pq.push({b, a}); // We will sort by ending times.
@@ -84,7 +77,7 @@ void solve()
 
     // 2nd solution: Vector + sorting based
     vector<pair<int, int>> movies;
-    loopi(i, 0, i, n, 1) // As we only need to iterate through movies, we can just keep a vector and then sort it.
+    for (ll i = 0; i < n; i++) // As we only need to iterate through movies, we can just keep a vector and then sort it.
     {
         int a, b;
         cin >> a >> b;
@@ -93,7 +86,7 @@ void solve()
     sort(movies.begin(), movies.end());
 
     int current_time = 0, ans = 0;
-    loopi(i, 0, i, n, 1)
+    for (ll i = 0; i < n; i++)
     {
         if (current_time <= movies[i].second)
         {
@@ -107,9 +100,8 @@ void solve()
 
 int main(void)
 {
-    ios_base::sync_with_stdio(0);
-    cin.tie(NULL);
-    cout.tie(NULL);
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
 
     solve();
     return 0;

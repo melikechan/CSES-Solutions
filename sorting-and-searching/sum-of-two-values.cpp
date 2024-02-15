@@ -13,12 +13,6 @@
 #pragma GCC target("sse4,avx,avx2,bmi,bmi2,popcnt,lzcnt") // default architechture flags, you can use below as fallback
 // #pragma GCC target("sse4,bmi,bmi2,popcnt,lzcnt")
 
-// Loops
-#define loopi($i, s, es, n, inc) for (ll $i = s; es < n; $i += inc)
-#define loopieq($i, s, es, n, inc) for (ll $i = s; es <= n; $i += inc)
-#define loopd($i, s, es, n, dec) for (ll $i = s; es > n; $i -= dec)
-#define loopdeq($i, s, es, n, dec) for (ll $i = s; es >= n; $i -= dec)
-
 using namespace std;
 
 using ll = long long;
@@ -56,7 +50,7 @@ void solve()
 
     // Let's think the values in the array like {value, index} pairs. As the problem wants us to print the indices, we have to store them.
     vector<pair<int, int>> arr;
-    loopi(i, 0, i, n, 1)
+    for (ll i = 0; i < n; i++)
     {
         int a;
         cin >> a;
@@ -67,7 +61,7 @@ void solve()
     // If we go to the previous element of upper_bound, we can find the value.
     sort(arr.begin(), arr.end());
 
-    loopi(i, 0, i, n, 1)
+    for (ll i = 0; i < n; i++)
     {
         int a = arr[i].first;
         int b = x - a;
@@ -97,9 +91,8 @@ void solve()
 
 int main(void)
 {
-    ios_base::sync_with_stdio(0);
-    cin.tie(NULL);
-    cout.tie(NULL);
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
 
     solve();
     return 0;

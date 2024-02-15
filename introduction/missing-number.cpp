@@ -13,12 +13,6 @@
 #pragma GCC target("sse4,avx,avx2,bmi,bmi2,popcnt,lzcnt") // default architechture flags, you can use below as fallback
 // #pragma GCC target("sse4,bmi,bmi2,popcnt,lzcnt")
 
-// Loops
-#define loopi($i, s, es, n, inc) for (ll $i = s; es < n; $i += inc)
-#define loopieq($i, s, es, n, inc) for (ll $i = s; es <= n; $i += inc)
-#define loopd($i, s, es, n, dec) for (ll $i = s; es > n; $i -= dec)
-#define loopdeq($i, s, es, n, dec) for (ll $i = s; es >= n; $i -= dec)
-
 using namespace std;
 
 using ll = long long;
@@ -50,7 +44,7 @@ void solve()
 
     // Simply keep a boolean vector that represents if we have encountered this number (0-indexed!)
     vector<bool> v(n);
-    loopi(i, 0, i, n, 1)
+    for (ll i = 0; i < n; i++)
     {
         ll x;
         cin >> x;
@@ -58,7 +52,7 @@ void solve()
     }
 
     // If we didn't encounter number i (0-indexed), return i + 1 (as our answer is 1-indexed)
-    loopi(i, 0, i, n, 1)
+    for (ll i = 0; i < n; i++)
     {
         if (!v[i])
         {
@@ -70,9 +64,8 @@ void solve()
 
 int main(void)
 {
-    ios_base::sync_with_stdio(0);
-    cin.tie(NULL);
-    cout.tie(NULL);
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
 
     solve();
     return 0;

@@ -13,12 +13,6 @@
 #pragma GCC target("sse4,avx,avx2,bmi,bmi2,popcnt,lzcnt") // default architechture flags, you can use below as fallback
 // #pragma GCC target("sse4,bmi,bmi2,popcnt,lzcnt")
 
-// Loops
-#define loopi($i, s, es, n, inc) for (ll $i = s; es < n; $i += inc)
-#define loopieq($i, s, es, n, inc) for (ll $i = s; es <= n; $i += inc)
-#define loopd($i, s, es, n, dec) for (ll $i = s; es > n; $i -= dec)
-#define loopdeq($i, s, es, n, dec) for (ll $i = s; es >= n; $i -= dec)
-
 using namespace std;
 
 using ll = long long;
@@ -55,7 +49,7 @@ void solve()
     */
     ll ans = 1, cur = 1;
 
-    loopi(i, 1, i, s.size(), 1)
+    for (ll i = 1; i < s.size(); i++)
     {
         if (s[i] == s[i - 1]) // If current letter is same with the previous, increase current state by one.
         {
@@ -73,9 +67,8 @@ void solve()
 
 int main(void)
 {
-    ios_base::sync_with_stdio(0);
-    cin.tie(NULL);
-    cout.tie(NULL);
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
 
     solve();
     return 0;

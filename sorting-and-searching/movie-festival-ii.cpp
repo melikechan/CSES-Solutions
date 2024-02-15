@@ -13,12 +13,6 @@
 #pragma GCC target("sse4,avx,avx2,bmi,bmi2,popcnt,lzcnt") // default architechture flags, you can use below as fallback
 // #pragma GCC target("sse4,bmi,bmi2,popcnt,lzcnt")
 
-// Loops
-#define loopi($i, s, es, n, inc) for (ll $i = s; es < n; $i += inc)
-#define loopieq($i, s, es, n, inc) for (ll $i = s; es <= n; $i += inc)
-#define loopd($i, s, es, n, dec) for (ll $i = s; es > n; $i -= dec)
-#define loopdeq($i, s, es, n, dec) for (ll $i = s; es >= n; $i -= dec)
-
 using namespace std;
 
 using ll = long long;
@@ -51,7 +45,7 @@ void solve()
     priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> films;
     multiset<int> persons;
 
-    loopi(i, 0, i, n, 1)
+    for (ll i = 0; i < n; i++)
     {
         int a, b;
         cin >> a >> b;
@@ -66,7 +60,7 @@ void solve()
         - We can use binary search to check if we can start to the film.
           By taking upper bound of starting time and going to the previous one. (If we go to one step back, we can find the earliest starting time.)
     */
-    loopi(i, 0, i, k, 1)
+    for (ll i = 0; i < k; i++)
     {
         persons.insert(0);
     }
@@ -90,9 +84,8 @@ void solve()
 
 int main(void)
 {
-    ios_base::sync_with_stdio(0);
-    cin.tie(NULL);
-    cout.tie(NULL);
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
 
     solve();
     return 0;

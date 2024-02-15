@@ -13,12 +13,6 @@
 #pragma GCC target("sse4,avx,avx2,bmi,bmi2,popcnt,lzcnt") // default architechture flags, you can use below as fallback
 // #pragma GCC target("sse4,bmi,bmi2,popcnt,lzcnt")
 
-// Loops
-#define loopi($i, s, es, n, inc) for (ll $i = s; es < n; $i += inc)
-#define loopieq($i, s, es, n, inc) for (ll $i = s; es <= n; $i += inc)
-#define loopd($i, s, es, n, dec) for (ll $i = s; es > n; $i -= dec)
-#define loopdeq($i, s, es, n, dec) for (ll $i = s; es >= n; $i -= dec)
-
 using namespace std;
 
 using ll = long long;
@@ -83,7 +77,7 @@ void solve()
 
     segtree.assign(4 * n, 0);
     vector<ll> arr;
-    loopi(i, 0, i, n, 1)
+    for (ll i = 0; i < n; i++)
     {
         ll x;
         cin >> x;
@@ -91,7 +85,7 @@ void solve()
     }
 
     build(arr, 1, 0, n - 1);
-    loopi(i, 0, i, q, 1)
+    for (ll i = 0; i < q; i++)
     {
         int l, r;
         cin >> l >> r;
@@ -101,9 +95,8 @@ void solve()
 
 int main(void)
 {
-    ios_base::sync_with_stdio(0);
-    cin.tie(NULL);
-    cout.tie(NULL);
+    ios_base::sync_with_stdio(false);
+    cin.tie(nullptr);
 
     solve();
     return 0;
